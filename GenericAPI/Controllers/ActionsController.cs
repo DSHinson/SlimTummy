@@ -36,13 +36,13 @@ namespace Generic.API.Controllers
             {
                 return NotFound();
             }
-            object? queryParams = null;
+            string? queryParams = null;
             if (paramData is not null)
             {
-                queryParams = (paramData as JObject).ToObject<object>();
+                queryParams = paramData.ToString();
             }
 
-            var data = _methodsRepository.ActionExecuteMethodsAsync(cmd.met_Command, queryParams ?? new {}).Result;
+            var data = _methodsRepository.ActionExecuteMethodsAsync(cmd.met_Command, queryParams).Result;
             _rm.Data = data;
             _rm.EndTimestamp = DateTime.Now;
             return _rm;

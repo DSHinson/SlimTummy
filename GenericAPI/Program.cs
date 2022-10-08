@@ -8,7 +8,8 @@ using Generic.DAL.Repositories.Interface;
 var builder = WebApplication.CreateBuilder(args);
 
 
-var con = "data source=172.31.31.2;initial catalog=fbo_Test;persist security info=True;user id=eCertUser;password=Mistral!@3;;MultipleActiveResultSets=FALSE;TrustServerCertificate=True;";
+ var con = "Data Source=localhost; Initial Catalog = TVATest;TrustServerCertificate=True;Persist Security Info=false;User ID=sa;Password=mystr0nG_P@ssw0rD!";
+
 // Add services to the container.
 builder.Services.AddControllers(o => { o.AllowEmptyInputInBodyModelBinding = true; });
 builder.Services.AddSingleton<IDbConnection>(_ => new SqlConnection(con));

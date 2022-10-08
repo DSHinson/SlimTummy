@@ -17,7 +17,7 @@ namespace Generic.DAL.Commands.Implementation
                                                                    ,[met_Command]
                                                                    ,[met_Version]
                                                                    ,[met_Enabled]
-                                                               FROM [fbo_Test].[Action].[TM_MET_Methods]
+                                                               FROM [Action].[TM_MET_Methods]
                                                                WHERE [met_Area] = @met_Area
                                                                AND [met_Method] = @met_Method
                                                                AND [met_Version] =@met_Version

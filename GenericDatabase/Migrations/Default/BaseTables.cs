@@ -3,7 +3,7 @@ using FluentMigrator.SqlServer;
 
 namespace Generic.Database.Migrations.Default
 {
-    [Migration(1)]
+    [Migration(2)]
     public class BaseTables:Migration
     {
         public override void Up()

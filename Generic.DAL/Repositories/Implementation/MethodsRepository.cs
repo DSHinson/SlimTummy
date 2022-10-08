@@ -31,7 +31,7 @@ namespace Generic.DAL.Repositories.Implementation
         /// <inheritdoc cref="IMethodsRepository.ActionExecuteMethodsAsync"/>>
         public async Task<object> ActionExecuteMethodsAsync(string command, object paramObj)
         {
-            return  (from row in await _connection.QueryAsync(command, paramObj) select (IDictionary<string, object>)row).AsList();
+            return  (from row in await _connection.QueryAsync(command,new { Param = paramObj } ) select (IDictionary<string, object>)row).AsList();
              
         }
     }
