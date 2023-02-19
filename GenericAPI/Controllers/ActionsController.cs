@@ -1,9 +1,7 @@
-﻿using System.Text.Json.Nodes;
-using Generic.API.dto;
+﻿using Generic.API.dto;
 using Generic.DAL.Repositories.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Newtonsoft.Json.Linq;
 
 namespace Generic.API.Controllers
 {
@@ -18,6 +16,8 @@ namespace Generic.API.Controllers
        {
            _methodsRepository = methodsRepository ?? throw new ArgumentNullException(nameof(methodsRepository));
        }
+
+
         /// <summary>
         /// Please use content-type:application/json when posting a body
         /// </summary>
@@ -44,6 +44,7 @@ namespace Generic.API.Controllers
 
             var data = _methodsRepository.ActionExecuteMethodsAsync(cmd.met_Command, queryParams).Result;
             _rm.Data = data;
+            _rm.IsSuccess = data is not null;
             _rm.EndTimestamp = DateTime.Now;
             return _rm;
         }

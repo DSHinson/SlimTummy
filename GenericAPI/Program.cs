@@ -8,7 +8,7 @@ using Generic.DAL.Repositories.Interface;
 var builder = WebApplication.CreateBuilder(args);
 
 
- var con = "Data Source=localhost; Initial Catalog = TVATest;TrustServerCertificate=True;Persist Security Info=false;User ID=sa;Password=mystr0nG_P@ssw0rD!";
+ var con = "Data Source=localhost; Initial Catalog =Test;TrustServerCertificate=True;Integrated Security=SSPI";
 
 // Add services to the container.
 builder.Services.AddControllers(o => { o.AllowEmptyInputInBodyModelBinding = true; });

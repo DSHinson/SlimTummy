@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Generic.DAL.Commands.Interface;
+﻿using Generic.DAL.Commands.Interface;
 
 namespace Generic.DAL.Commands.Implementation
 {
@@ -21,6 +16,7 @@ namespace Generic.DAL.Commands.Implementation
                                                                WHERE [met_Area] = @met_Area
                                                                AND [met_Method] = @met_Method
                                                                AND [met_Version] =@met_Version
+                                                               AND [met_Enabled] = 1
                                                                ORDER BY met_Version DESC";
     }
 }

@@ -23,7 +23,7 @@ namespace Generic.Database // Note: actual namespace depends on the project name
             {
                 var direction = "";
                 long version = 0;
-                var con = "Data Source=localhost; Initial Catalog = TVATest;TrustServerCertificate=True;Persist Security Info=True;User ID=sa;Password=mystr0nG_P@ssw0rD!";
+                var con = "Data Source=localhost; Initial Catalog = Test;TrustServerCertificate=True;Persist Security Info=True;Integrated Security=SSPI";
                 //var con = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=fbo_local;Integrated Security=True";
 
                 Console.WriteLine($"Currently pointed to: {con}");
